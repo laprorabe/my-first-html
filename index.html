@@ -2,12 +2,18 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Warframers tier list</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,27 +23,23 @@
             color: #e6e6e6;
             animation: gradientBackground 15s ease infinite;
             background-size: 300% 300%;
+            padding: 20px;
         }
 
         @keyframes gradientBackground {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
             font-weight: bold;
             text-align: center;
             color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
         }
 
         .subtitle {
@@ -45,14 +47,16 @@
             font-family: 'Courier New', monospace;
             color: #b8c2cc;
             margin-bottom: 2rem;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+            line-height: 1.4;
         }
 
         .button-container {
             display: flex;
             justify-content: center;
             width: 100%;
-            margin-top: 1rem;
+            max-width: 400px;
+            margin-top: 1.5rem;
         }
 
         .centered-button {
@@ -60,18 +64,19 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 24px;
+            padding: clamp(10px, 3vw, 12px) clamp(16px, 4vw, 24px);
             cursor: pointer;
             background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
             color: #ffffff;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 3.5vw, 1rem);
             font-weight: 500;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .centered-button:hover {
@@ -103,10 +108,48 @@
         .centered-button img {
             filter: invert(1) brightness(1.5);
             transition: transform 0.3s ease;
+            width: clamp(18px, 5vw, 20px);
+            height: clamp(18px, 5vw, 20px);
         }
 
         .centered-button:hover img {
             transform: scale(1.1);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+                justify-content: flex-start;
+                padding-top: 25vh;
+            }
+            
+            .title {
+                margin-bottom: 0.5rem;
+            }
+            
+            .subtitle {
+                margin-bottom: 1.8rem;
+            }
+            
+            .button-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (hover: none) {
+            .centered-button:hover {
+                transform: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+            }
+            
+            .centered-button:hover::before {
+                left: -100%;
+            }
+            
+            .centered-button:hover img {
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -115,9 +158,9 @@
     <p class="subtitle">Выберите категорию:</p>
     
     <div class="button-container">
-        <a href="c:\Users\sch80\OneDrive\Рабочий стол\site\index2.html" style="text-decoration: none;">
+        <a href="index2.html" style="text-decoration: none;">
             <button class="centered-button">
-                <img src="c:\Users\sch80\OneDrive\Рабочий стол\site\i (2).webp" alt="Иконка" width="20" height="20">
+                <img src="c:\Users\sch80\OneDrive\Рабочий стол\site\i (2).webp" alt="Иконка">
                 <span>Operators</span>
             </button>
         </a>
