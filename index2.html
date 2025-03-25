@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warframe Tier List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .tier-container {
+            margin-bottom: 40px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .s-tier {
+            color: #ff5555;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 85, 85, 0.4);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff5555;
+        }
+        
+        .a-tier {
+            color: #ffaa55;
+            font-size: 2.2em;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 170, 85, 0.4);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffaa55;
+        }
+        
+        .b-tier {
+            color: #ffcc55;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 204, 85, 0.4);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffcc55;
+        }
+        
+        .tier-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 15px;
+        }
+        
+        .warframe-card {
+            background-color: #252525;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .warframe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .warframe-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+        
+        .warframe-name {
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .tier-content {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .warframe-img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Operators Tier List</h1>
+    
+    <div class="tier-container">
+        <div class="s-tier">S Tier</div>
+        <div class="tier-content">
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/WispPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Wisp Prime</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/MesaPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Mesa Prime</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/XakuPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Xaku Prime</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/OctaviaPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Octavia Prime</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tier-container">
+        <div class="a-tier">A Tier</div>
+        <div class="tier-content">
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Mech/NechroMech.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Voidrig</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/VoltPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Volt Prime</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Warframes/Frumentarius.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Cyte-09</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/NekrosPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Nekros Prime</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tier-container">
+        <div class="b-tier">B Tier</div>
+        <div class="tier-content">
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Cosmetics/WarframeSkins/ExcaliburUmbra.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Excalibur </div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/LokiPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Loki Prime</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Warframes/Qorvex.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Qorvex</div>
+            </div>
+            <div class="warframe-card">
+                <img src="https://media.overframe.gg/v2/256x/Lotus/Interface/Icons/StoreIcons/Primes/InarosPrime.png.webp" class="warframe-img" loading="lazy">
+                <div class="warframe-name">Inaros</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
