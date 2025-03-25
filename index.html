@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Warframers tier list</title>
+    <title>Warframe tier list</title>
     <style>
         * {
             box-sizing: border-box;
@@ -30,6 +30,25 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: clamp(120px, 30vw, 180px);
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .title {
@@ -120,7 +139,16 @@
             body {
                 padding: 15px;
                 justify-content: flex-start;
-                padding-top: 25vh;
+                padding-top: 15vh;
+            }
+            
+            .header {
+                margin-bottom: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+                width: clamp(100px, 25vw, 150px);
             }
             
             .title {
@@ -150,12 +178,19 @@
             .centered-button:hover img {
                 transform: none;
             }
+            
+            .logo:hover {
+                transform: none;
+            }
         }
     </style>
 </head>
 <body>
-    <h1 class="title">Warframe tier list</h1>
-    <p class="subtitle">Выберите категорию:</p>
+    <div class="header">
+        <img src="c:\Users\sch80\Downloads\1c7a054347b6bc7a8937c8c1c574cb3f.png" alt="Warframe Logo" class="logo">
+        <h1 class="title">Warframe tier list</h1>
+        <p class="subtitle">Выберите категорию:</p>
+    </div>
     
     <div class="button-container">
         <a href="index2.html" style="text-decoration: none;">
