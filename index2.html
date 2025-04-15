@@ -191,4 +191,135 @@
         </div>
     </div>
 </body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    textarea {
+        height: 150px;
+        resize: vertical;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .success-message {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #dff0d8;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+    }
+</style>
+</head>
+<body>
+<h1>Форма обратной связи</h1>
+<form id="feedbackForm">
+    <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameError" class="error"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <div id="commentError" class="error"></div>
+    </div>
+    
+    <button type="submit">Отправить</button>
+</form>
+
+<div id="resultContainer"></div>
+
+<script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        document.querySelectorAll('.error').forEach(el => el.textContent = '');
+        document.getElementById('resultContainer').innerHTML = '';
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+        
+        let isValid = true;
+        
+        if (name === '') {
+            document.getElementById('nameError').textContent = 'Пожалуйста, введите ваше имя';
+            isValid = false;
+        }
+        
+        if (email === '') {
+            document.getElementById('emailError').textContent = 'Пожалуйста, введите ваш email';
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            document.getElementById('emailError').textContent = 'Пожалуйста, введите корректный email';
+            isValid = false;
+        }
+        
+        if (comment === '') {
+            document.getElementById('commentError').textContent = 'Пожалуйста, введите ваш комментарий';
+            isValid = false;
+        }
+        
+        if (isValid) {
+            const resultHTML = `
+                <div class="success-message">
+                    <p>Спасибо, ${name}!</p>
+                    <p>Мы получили ваш комментарий:</p>
+                    <p><em>${comment}</em></p>
+                    <p>Ответ будет отправлен на email: ${email}</p>
+                </div>
+            `;
+            document.getElementById('resultContainer').innerHTML = resultHTML;
+            
+            this.reset();
+        }
+    });
+    
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+</script>
+</body>
 </html>
